@@ -200,20 +200,36 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    lazy = false,
-    config = function()
-      require('onedark').setup {
-        -- Set a style preset. 'dark' is default.
-        style = 'dark', -- dark, darker, cool, deep, warm, warmer, light
-      }
-      require('onedark').load()
-    end,
+--  {
+--    -- Theme inspired by Atom
+--    'navarasu/onedark.nvim',
+--    priority = 1000,
+--    lazy = false,
+--    config = function()
+--      require('onedark').setup {
+--        -- Set a style preset. 'dark' is default.
+--        style = 'darker', -- dark, darker, cool, deep, warm, warmer, light
+--      }
+--      require('onedark').load()
+--   end,
+--  },
+  { 
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	lazy = false,
+	config = function()
+	  require("catppuccin").setup {
+    		flavour = "mocha", -- latte, frappe, macchiato, mocha
+    		background = { -- :h background
+        		light = "latte",
+        		dark = "mocha",
+    	  	},
+	  }	
+          require("catppuccin").load()
+	end,
   },
-
+        	
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
